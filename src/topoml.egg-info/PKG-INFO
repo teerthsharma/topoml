@@ -1,0 +1,106 @@
+Metadata-Version: 2.4
+Name: topoml
+Version: 0.1.0
+Summary: TopoML SDK — Unified Python SDK for topological ML: faraday, hamilton, topoflow, lambda-topo, phi-mem, epsilon-cli, seal-vault
+Author-email: Teerth Sharma <teerthsharma@outlook.com>
+License: MIT
+Project-URL: Homepage, https://github.com/teerthsharma/topoml
+Project-URL: Repository, https://github.com/teerthsharma/topoml
+Keywords: topological-data-analysis,persistent-homology,electromagnetics,physics,manifold,tda
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Provides-Extra: all
+Requires-Dist: faraday>=0.1.0; extra == "all"
+Requires-Dist: hamliton>=0.1.0; extra == "all"
+Requires-Dist: topoflow>=0.1.0; extra == "all"
+Requires-Dist: lambda-topo>=0.2.0; extra == "all"
+Requires-Dist: phi-mem>=0.1.0; extra == "all"
+Requires-Dist: epsilon-cli>=0.1.0; extra == "all"
+Requires-Dist: sealvault>=0.1.0; extra == "all"
+Provides-Extra: physics
+Requires-Dist: faraday>=0.1.0; extra == "physics"
+Requires-Dist: hamliton>=0.1.0; extra == "physics"
+Provides-Extra: viz
+Requires-Dist: topoflow>=0.1.0; extra == "viz"
+Requires-Dist: lambda-topo>=0.2.0; extra == "viz"
+Provides-Extra: memory
+Requires-Dist: phi-mem>=0.1.0; extra == "memory"
+Requires-Dist: lambda-topo>=0.2.0; extra == "memory"
+Provides-Extra: crypto
+Requires-Dist: sealvault>=0.1.0; extra == "crypto"
+Provides-Extra: tools
+Requires-Dist: epsilon-cli>=0.1.0; extra == "tools"
+
+# TopoML SDK
+
+Unified Python SDK for Teerth Sharma's topological ML stack.
+
+## Install
+
+```bash
+# Full stack
+pip install topoml[all]
+
+# Just physics
+pip install topoml[physics]
+
+# Just visualization
+pip install topoml[viz]
+```
+
+## Modules
+
+| Module | Package | What it does |
+|--------|---------|-------------|
+| `topoml.faraday` | faraday | God Tensor: E×H electromagnetic coupling |
+| `topoml.hamilton` | hamilton | N-body EM coupling tensor |
+| `topoml.topo` | topoflow | 3D persistent homology visualization |
+| `topoml.lambda_topo` | lambda_topo | TDA memory + manifold learning |
+| `topoml.phi_mem` | phi-mem | LLM topological memory |
+| `topoml.epsilon` | epsilon-cli | Stochastic resonance CLI |
+| `topoml.seal` | sealvault | Quantum-seeded encryption |
+
+## Quick Start
+
+```python
+import topoml as tm
+
+# God Tensor: predict EM field topology
+# tm.faraday.predict(geometry)  # requires faraday installed
+
+# Hamilton: N-body coupling
+# tm.hamilton.coupling(bodies)  # requires hamilton installed
+
+# TopoFlow: render persistent homology
+# tm.topo.render(barcodes)  # requires topoflow installed
+```
+
+## CLI Tools
+
+After installing `topoml[all]` or `topoml[tools]`:
+- `faraday-predict`, `faraday-demo`
+- `hamliton train`, `hamliton score`
+- `topoflow render`, `topoflow demo`
+- `lambda-topo-manifold`
+- `phi-mem add`, `phi-mem query`
+- `epsilon-stochastic`
+- `sealvault encrypt`
+
+## Your Stack
+
+These tools were built by Teerth Sharma (github.com/teerthsharma):
+- **Physics moat:** Banach fixed-point EM coupling (no FDFD at prediction time)
+- **Topology moat:** Persistent homology as a universal geometry descriptor
+- **Memory moat:** Topological signatures for LLM context, not raw embeddings
+- **Systems moat:** Stochastic resonance + quantum-seeded crypto
+
+## License
+
+MIT

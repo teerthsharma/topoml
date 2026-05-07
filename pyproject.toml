@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "topoml"
+version = "0.1.0"
+description = "TopoML SDK — Unified Python SDK for topological ML: faraday, hamilton, topoflow, lambda-topo, phi-mem, epsilon-cli, seal-vault"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Teerth Sharma", email = "teerthsharma@outlook.com"}]
+keywords = ["topological-data-analysis", "persistent-homology", "electromagnetics", "physics", "manifold", "tda"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# TopoML is a meta-package that transitively installs all Teerth Sharma tools.
+# It pins compatible versions of all constituent packages.
+dependencies = []
+
+[project.optional-dependencies]
+all = [
+    "faraday>=0.1.0",
+    "hamliton>=0.1.0",
+    "topoflow>=0.1.0",
+    "lambda-topo>=0.2.0",
+    "phi-mem>=0.1.0",
+    "epsilon-cli>=0.1.0",
+    "sealvault>=0.1.0",
+]
+physics = [
+    "faraday>=0.1.0",
+    "hamliton>=0.1.0",
+]
+viz = [
+    "topoflow>=0.1.0",
+    "lambda-topo>=0.2.0",
+]
+memory = [
+    "phi-mem>=0.1.0",
+    "lambda-topo>=0.2.0",
+]
+crypto = [
+    "sealvault>=0.1.0",
+]
+tools = [
+    "epsilon-cli>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/teerthsharma/topoml"
+Repository = "https://github.com/teerthsharma/topoml"
+
+[tool.setuptools.packages.find]
+where = ["src"]
